@@ -3,93 +3,73 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <h1>Chat AI Bundle</h1>
+      <section className={styles.chatWindow}>
+        <header className={styles.header}>
+          <h2>ChatGPT</h2>
+        </header>
+        <div className={styles.content}>
+          <div className={styles.messageContainer}>
+            <div className={`${styles.message} ${styles.send}`}>
+              <div className={styles.avatar}>🧑🏻‍💻</div>
+              <div className={styles.messageContent}>
+                <div className={styles.username}>나</div>
+                <p className={styles.messageText}>안녕! 너의 이름은 뭐니?</p>
+              </div>
+            </div>
+            <div className={`${styles.message} ${styles.receive}`}>
+              <div className={styles.messageContent}>
+                <div className={styles.username}>ChatGPT</div>
+                <p className={styles.messageText}>ChatGPT!</p>
+              </div>
+              <div className={styles.avatar}>
+                <Image
+                  src="/chatgpt.svg"
+                  alt="chatGPT"
+                  width={24}
+                  height={24}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.messageContainer}>
+            <div className={`${styles.message} ${styles.send}`}>
+              <div className={styles.avatar}>🧑🏻‍💻</div>
+              <div className={styles.messageContent}>
+                <div className={styles.username}>나</div>
+                <p className={styles.messageText}>너는 뭐하는 애야?</p>
+              </div>
+            </div>
+            <div className={`${styles.message} ${styles.receive}`}>
+              <div className={styles.messageContent}>
+                <div className={styles.username}>ChatGPT</div>
+                <p className={styles.messageText}>ChatGPT!</p>
+              </div>
+              <div className={styles.avatar}>
+                <Image src="/claude.svg" alt="cloaude" width={24} height={24} />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <div className={styles.inputContainer}>
+          <input
+            type="text"
+            placeholder="질문을 입력하세요."
+            className={styles.input}
+          />
+          <button className={styles.sendButton}>
+            <Image
+              src="/send.svg"
+              alt="보내기"
+              width={24}
+              height={24}
+              className="icon"
+            />
+          </button>
+        </div>
+      </section>
     </main>
   );
 }
