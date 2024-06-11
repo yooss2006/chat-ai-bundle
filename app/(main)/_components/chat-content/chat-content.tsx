@@ -4,12 +4,15 @@ import Image from "next/image";
 import styles from "./chat-content.module.css";
 import { CHAT_MAP } from "@/consts/chat";
 import { ChatType } from "@/types/Chat";
+import { useChatStore } from "@/store/chat";
 
 interface Props {
   type: ChatType;
 }
 
 export default function ChatContent({ type }: Props) {
+  const messages = useChatStore((state) => state.messages);
+  console.log(messages);
   return (
     <div className={styles.content}>
       <div className={styles.messageContainer}>
