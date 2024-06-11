@@ -49,7 +49,7 @@ export default function Home() {
                 <p className={styles.messageText}>ChatGPT!</p>
               </div>
               <div className={styles.avatar}>
-                <Image src="/claude.svg" alt="cloaude" width={24} height={24} />
+                <Image src="/claude.svg" alt="claude" width={24} height={24} />
               </div>
             </div>
           </div>

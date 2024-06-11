@@ -5,13 +5,16 @@ import styles from "./index.module.css";
 import Image from "next/image";
 import { useState } from "react";
 import cx from "classnames";
+import { useChatStore } from "@/\bstore/chat";
 
 export default function ChatForm() {
   const [text, setText] = useState("");
+  const addMessage = useChatStore((state) => state.addMessage);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(text);
+    addMessage(text);
+    setText("");
   };
 
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
