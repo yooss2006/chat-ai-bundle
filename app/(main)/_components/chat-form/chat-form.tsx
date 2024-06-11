@@ -1,11 +1,11 @@
 "use client";
 
-import AuthTextarea from "@/components/input/auth-textarea";
-import styles from "./index.module.css";
+import AuthTextarea from "@/components/input/auth-textarea/auth-textarea";
+import styles from "./chat-form.module.css";
 import Image from "next/image";
 import { useState } from "react";
 import cx from "classnames";
-import { useChatStore } from "@/\bstore/chat";
+import { useChatStore } from "@/store/chat";
 
 export default function ChatForm() {
   const [text, setText] = useState("");

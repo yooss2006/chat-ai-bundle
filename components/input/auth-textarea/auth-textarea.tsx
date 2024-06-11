@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import styles from "./index.module.css";
+import styles from "./auth-textarea.module.css";
 
 interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}

@@ -1,0 +1,14 @@
+.chatContainer {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.header {
+  padding: 1rem;
+  font-size: 1.25rem;
+  border-bottom: 1px solid #ccc;
+}
