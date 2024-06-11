@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import ChatForm from "./_components/chat-form";
 
 export default function Home() {
   return (
@@ -53,22 +54,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={styles.inputContainer}>
-          <input
-            type="text"
-            placeholder="질문을 입력하세요."
-            className={styles.input}
-          />
-          <button className={styles.sendButton}>
-            <Image
-              src="/send.svg"
-              alt="보내기"
-              width={24}
-              height={24}
-              className="icon"
-            />
-          </button>
-        </div>
+        <ChatForm />
       </section>
     </main>
   );

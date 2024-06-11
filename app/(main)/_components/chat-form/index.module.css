@@ -1,0 +1,29 @@
+.inputContainer {
+  padding: 0.5rem 1rem;
+  position: relative;
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.sendButton {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  right: 1.5rem;
+  top: 0.85rem;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.5s;
+  background-color: lightgray;
+}
+.sendButton.disabled {
+  background-color: rgb(148, 146, 146);
+}
+
+.sendButton:hover {
+  background-color: rgb(194, 194, 194);
+}

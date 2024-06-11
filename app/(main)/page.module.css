@@ -62,39 +62,3 @@
   color: white;
   background-color: #3f51b5;
 }
-
-.inputContainer {
-  padding: 0.5rem 1rem;
-  position: relative;
-  border-top: 1px solid #ccc;
-  background-color: #fff;
-}
-
-.input {
-  width: 100%;
-  padding: 1rem 1.25rem;
-  border: none;
-  border-radius: 10px;
-  background-color: #f0f0f0;
-}
-
-.sendButton {
-  width: 2.75rem;
-  height: 2.75rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  position: absolute;
-  right: 1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  border-radius: 10px;
-  transition: all 0.5s;
-  background-color: lightgray;
-}
-
-.sendButton:hover {
-  background-color: rgb(194, 194, 194);
-}
