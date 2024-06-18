@@ -1,7 +1,7 @@
 import styles from "./chat-container.module.css";
 import ChatForm from "@/app/(main)/_components/chat-form/chat-form";
 import { CHAT_MAP } from "@/consts/chat";
-import { ChatType } from "@/types/Chat";
+import { ChatType } from "@/types/chat";
 import ChatContent from "../chat-content/chat-content";
 
 interface Props {

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "./chat-content.module.css";
 import { CHAT_MAP } from "@/consts/chat";
-import { ChatType } from "@/types/Chat";
+import { ChatType } from "@/types/chat";
 import { useChatStore } from "@/store/chat";
 
 interface Props {

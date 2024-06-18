@@ -1,10 +1,10 @@
-import ChatContainer from "@/app/(main)/_components/chat-container/chat-container";
+import Chat from "./_components/chat/chat";
 
 export default function Home() {
   return (
     <main>
       <h1>Chat AI Bundle</h1>
-      <ChatContainer type="chatgpt" />
+      <Chat />
     </main>
   );
 }
