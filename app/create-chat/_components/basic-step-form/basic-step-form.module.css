@@ -1,0 +1,57 @@
+.title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.inputLabel {
+  & > input[type="text"] {
+    margin-top: 0.5rem;
+  }
+  & > input[type="checkbox"] {
+    margin-right: 0.5rem;
+  }
+}
+
+.titleLabel {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.description {
+  margin: 0.25rem 0 1rem;
+  color: gray;
+}
+
+.checkboxGroup {
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.textInput {
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.blockButton {
+  width: 100%;
+  padding: 0.5rem 0;
+  border-radius: 4px;
+  border: none;
+  background-color: lightsteelblue;
+  transition: all 0.3s;
+  &:hover {
+    background-color: steelblue;
+    color: white;
+  }
+}

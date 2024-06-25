@@ -77,6 +77,23 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+  background: black;
+  overflow-y: hidden;
+}
+
+main {
+  width: 100%;
+  height: calc(100% - 4rem);
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .blind {
   position: absolute;
   width: 1px;
