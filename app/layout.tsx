@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { QueryClientProvider } from "@/lib/react-query/query-client-provider";
-import "../globals.css";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +18,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={inter.className}>
-        <QueryClientProvider>{children}</QueryClientProvider>
+        <h1 className="blind">Chat AI Bundle</h1>
+        <QueryClientProvider>
+          <main>{children}</main>
+        </QueryClientProvider>
       </body>
     </html>
   );
