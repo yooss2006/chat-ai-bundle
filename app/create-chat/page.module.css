@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  max-width: 520px;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
