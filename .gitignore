@@ -36,5 +36,5 @@ yarn-error.log*
 next-env.d.ts
 
 # chat 내부 파일만 제외
-chat/*
+chat/*.json
 !chat/
