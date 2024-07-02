@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./step-indicator.module.css";
+import { motion } from "framer-motion";
 import { StepEnum, stepOrder } from "../../_model/step";
 import { useStep } from "../../_store/step";
 
@@ -21,7 +22,19 @@ export default function StepIndicator() {
         if (isActive) stepClass += ` ${styles.active}`;
         if (isCompleted) stepClass += ` ${styles.completed}`;
 
-        return <div key={step} className={stepClass} />;
+        const animate = isActive ? { scale: [1, 1.1, 1] } : undefined;
+        const transition = isActive
+          ? { duration: 0.5, ease: "easeInOut" }
+          : undefined;
+
+        return (
+          <motion.div
+            animate={animate}
+            transition={transition}
+            key={step}
+            className={stepClass}
+          />
+        );
       })}
       <div className={styles.backLine} />
     </div>
