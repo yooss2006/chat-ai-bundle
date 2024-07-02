@@ -7,7 +7,16 @@
   background-color: white;
 }
 
-.title {
-  font-size: 1.5rem;
+.header {
   margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: gray;
+  border-bottom: 1px solid gray;
+}
+
+.title {
+  font-size: 1.25rem;
 }

@@ -2,11 +2,12 @@
 
 import { FormEvent } from "react";
 import { useCreateChat } from "../../_store/create-chat";
-import { Step } from "../../_model/step";
-import BasicStepForm from "../basic-step-form/basic-step-form";
+import { StepEnum } from "../../_model/step";
+import BasicStepForm from "../provider-step-form/provider-step-form";
 import ModelStepForm from "../model-step-form/model-step-form";
 import PromptStepForm from "../prompt-step-form/prompt-stem-form";
 import { APIProviderEnum } from "@/types/service";
+import NameStepForm from "../name-step-form/name-step-form";
 
 type Props = {
   apiProviders: Array<APIProviderEnum>;
@@ -24,11 +25,13 @@ export default function CreateChatContent({ apiProviders }: Props) {
     <form onSubmit={handleFormSubmit}>
       {(() => {
         switch (step) {
-          case Step.Basic:
+          case StepEnum.Name:
+            return <NameStepForm />;
+          case StepEnum.Provider:
             return <BasicStepForm apiProviders={apiProviders} />;
-          case Step.Model:
+          case StepEnum.Model:
             return <ModelStepForm apiProviders={apiProviders} />;
-          case Step.Prompt:
+          case StepEnum.Prompt:
             return <PromptStepForm />;
           default:
             return null;

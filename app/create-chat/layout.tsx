@@ -1,3 +1,4 @@
+import StepIndicator from "./_components/step-indicator/step-indicator";
 import styles from "./page.module.css";
 
 export default function CreateChatLayout({
@@ -7,7 +8,10 @@ export default function CreateChatLayout({
 }>) {
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>채팅방 만들기</h2>
+      <header className={styles.header}>
+        <h2 className={styles.title}>채팅방 생성하기</h2>
+        <StepIndicator />
+      </header>
       {children}
     </div>
   );

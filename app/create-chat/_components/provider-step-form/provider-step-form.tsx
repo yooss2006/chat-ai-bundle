@@ -1,5 +1,5 @@
 import { APIProviderEnum } from "@/types/service";
-import styles from "./basic-step-form.module.css";
+import styles from "./provider-step-form.module.css";
 
 type Props = {
   apiProviders: Array<APIProviderEnum>;
