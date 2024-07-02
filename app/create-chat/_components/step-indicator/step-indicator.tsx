@@ -2,10 +2,10 @@
 
 import styles from "./step-indicator.module.css";
 import { StepEnum, stepOrder } from "../../_model/step";
-import { useCreateChat } from "../../_store/create-chat";
+import { useStep } from "../../_store/step";
 
 export default function StepIndicator() {
-  const currentStep = useCreateChat((state) => state.step);
+  const currentStep = useStep((state) => state.step);
 
   const isStepCompleted = (step: StepEnum) => {
     return stepOrder.indexOf(step) < stepOrder.indexOf(currentStep);
