@@ -1,4 +1,5 @@
 import Header from "../header/header";
+import SubmitPageNavigator from "../submit-page-navigator/submit-page-navigator";
 import styles from "./name-step-form.module.css";
 
 export default function NameStepForm() {
@@ -13,6 +14,7 @@ export default function NameStepForm() {
         placeholder="ex) 과학 탐구"
         className={styles.textInput}
       />
+      <SubmitPageNavigator />
     </article>
   );
 }

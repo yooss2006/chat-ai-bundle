@@ -26,3 +26,9 @@
   color: white;
   background-color: rgba(0, 0, 255, 0.594);
 }
+
+.disabled {
+  cursor: not-allowed;
+  background-color: lightgrey !important;
+  color: white;
+}

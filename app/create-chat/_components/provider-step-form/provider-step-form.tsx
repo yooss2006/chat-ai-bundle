@@ -1,5 +1,7 @@
 import { APIProviderEnum } from "@/types/service";
 import styles from "./provider-step-form.module.css";
+import Header from "../header/header";
+import SubmitPageNavigator from "../submit-page-navigator/submit-page-navigator";
 
 type Props = {
   apiProviders: Array<APIProviderEnum>;
@@ -7,19 +9,12 @@ type Props = {
 
 export default function BasicStepForm({ apiProviders }: Props) {
   return (
-    <section>
-      <h3 className={styles.title}>기본 정보 입력</h3>
+    <article>
+      <Header
+        title="서비스 제공 업체 선택"
+        description=".env.local 파일에 API Key를 설정한 서비스만 선택 가능합니다."
+      />
       <div className={styles.formGroup}>
-        <label className={`${styles.inputLabel} ${styles.titleLabel}`}>
-          채팅방 이름
-          <input type="text" className={styles.textInput} />
-        </label>
-      </div>
-      <div className={styles.formGroup}>
-        <label className={styles.titleLabel}>서비스 제공 업체 선택</label>
-        <p className={styles.description}>
-          .env.local 파일에 API Key를 설정한 서비스만 나열됩니다.
-        </p>
         <div className={styles.checkboxGroup}>
           <label className={styles.inputLabel}>
             <input type="checkbox" value="OpenAI" />
@@ -35,7 +30,7 @@ export default function BasicStepForm({ apiProviders }: Props) {
           </label>
         </div>
       </div>
-      <button className={styles.blockButton}>다음</button>
-    </section>
+      <SubmitPageNavigator />
+    </article>
   );
 }

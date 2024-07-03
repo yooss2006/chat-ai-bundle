@@ -8,7 +8,6 @@ import ModelStepForm from "../model-step-form/model-step-form";
 import PromptStepForm from "../prompt-step-form/prompt-stem-form";
 import { APIProviderEnum } from "@/types/service";
 import NameStepForm from "../name-step-form/name-step-form";
-import SubmitPageNavigator from "../submit-page-navigator/submit-page-navigator";
 
 type Props = {
   apiProviders: Array<APIProviderEnum>;
@@ -38,7 +37,6 @@ export default function CreateChatContent({ apiProviders }: Props) {
             return null;
         }
       })()}
-      <SubmitPageNavigator />
     </form>
   );
 }
