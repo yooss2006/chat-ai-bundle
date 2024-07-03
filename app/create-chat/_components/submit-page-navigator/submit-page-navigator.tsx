@@ -16,10 +16,16 @@ const NextButton = ({
   disabled = false,
 }: ButtonProps & { disabled?: boolean }) => {
   const isEndStep = currentStep === stepOrder.at(-1);
+
   const moveNextStep = useStep((state) => state.moveNextStep);
 
-  const handleNextButtonClick = () => {
-    if (disabled || isEndStep) return;
+  const handleNextButtonClick = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    if (disabled) return;
+    if (!isEndStep) {
+      event.preventDefault();
+    }
 
     moveNextStep();
   };
@@ -27,12 +33,12 @@ const NextButton = ({
   return (
     <button
       onClick={handleNextButtonClick}
-      type={isEndStep ? "submit" : "button"}
+      type="submit"
       className={`${styles.button} ${styles.next} ${
         disabled ? styles.disabled : ""
       }`}
     >
-      다음
+      {isEndStep ? "저장" : "다음"}
     </button>
   );
 };

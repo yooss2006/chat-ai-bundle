@@ -1,8 +1,13 @@
 .buttonGroup {
+  width: calc(100% - 2rem);
   margin-top: 0.75rem;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1rem;
 }
 
 .button {
