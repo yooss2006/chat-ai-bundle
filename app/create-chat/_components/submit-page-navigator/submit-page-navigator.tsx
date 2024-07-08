@@ -2,12 +2,14 @@ import { IoArrowBack } from "react-icons/io5";
 import styles from "./submit-page-navigator.module.css";
 import { useStep } from "../../_store/step";
 import { StepEnum, stepOrder } from "../../_model/step";
+import { useFormContext } from "react-hook-form";
 
 type ButtonProps = {
   currentStep: StepEnum;
 };
 
 type PageNavigatorProps = {
+  resetFields?: Array<string>;
   disabled?: boolean;
 };
 
@@ -43,15 +45,28 @@ const NextButton = ({
   );
 };
 
-const BackButton = ({ currentStep }: ButtonProps) => {
+const BackButton = ({
+  currentStep,
+  resetFields,
+}: ButtonProps & { resetFields?: Array<string> }) => {
+  const { resetField } = useFormContext();
   const isStartStep = currentStep === stepOrder[0];
   const movePrevStep = useStep((state) => state.movePrevStep);
+
+  const handleBackButtonClick = () => {
+    if (resetFields) {
+      resetFields.forEach((field) => {
+        resetField(field);
+      });
+    }
+    movePrevStep();
+  };
 
   if (isStartStep) return null;
 
   return (
     <button
-      onClick={movePrevStep}
+      onClick={handleBackButtonClick}
       type="button"
       className={`${styles.button} ${styles.back}`}
     >
@@ -61,13 +76,14 @@ const BackButton = ({ currentStep }: ButtonProps) => {
 };
 
 export default function SubmitPageNavigator({
+  resetFields,
   disabled = false,
 }: PageNavigatorProps) {
   const currentStep = useStep((state) => state.step);
 
   return (
     <div className={styles.buttonGroup}>
-      <BackButton currentStep={currentStep} />
+      <BackButton currentStep={currentStep} resetFields={resetFields} />
       <NextButton currentStep={currentStep} disabled={disabled} />
     </div>
   );
