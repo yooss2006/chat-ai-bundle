@@ -5,7 +5,7 @@ import { StepEnum } from "../../_model/step";
 import ProviderStepForm from "../provider-step-form/provider-step-form";
 import ModelStepForm from "../model-step-form/model-step-form";
 import PromptStepForm from "../prompt-step-form/prompt-stem-form";
-import { APIProviderEnum } from "@/types/service";
+import { APIProviderEnum } from "@/types/provider";
 import NameStepForm from "../name-step-form/name-step-form";
 import { AnimatePresence } from "framer-motion";
 import { FormProvider, useForm } from "react-hook-form";
@@ -20,7 +20,10 @@ export default function CreateChatContent({ apiProviders }: Props) {
     defaultValues: {
       name: "",
       provider: [],
-      model: [],
+      model: {
+        leftZone: [],
+        rightZone: [],
+      },
       prompt: "",
     },
   });
@@ -46,12 +49,7 @@ export default function CreateChatContent({ apiProviders }: Props) {
                   />
                 );
               case StepEnum.Model:
-                return (
-                  <ModelStepForm
-                    key={StepEnum.Model}
-                    apiProviders={apiProviders}
-                  />
-                );
+                return <ModelStepForm key={StepEnum.Model} />;
               case StepEnum.Prompt:
                 return <PromptStepForm key={StepEnum.Prompt} />;
               default:

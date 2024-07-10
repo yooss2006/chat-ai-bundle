@@ -1,0 +1,87 @@
+.tagListContainer {
+  padding: 1rem 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.tagList {
+  margin: 0;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.tagListTitle {
+  margin-bottom: 1rem;
+}
+.tag {
+  width: fit-content;
+  padding: 0.25rem 0.25rem;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.dropZoneGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.dropZoneContainer {
+  width: 100%;
+}
+
+.dropZoneContainer.small {
+  width: 30%;
+}
+.dropZoneTitle {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.dropZone {
+  position: relative;
+  min-height: 200px;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.dropZoneTagList {
+  margin: 0;
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  text-align: center;
+}
+
+.dropZoneTag {
+  padding: 0.25rem;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid black;
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+}

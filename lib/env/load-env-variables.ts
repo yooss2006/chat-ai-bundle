@@ -1,4 +1,4 @@
-import { APIProviderEnum } from "@/types/service";
+import { APIProviderEnum } from "@/types/provider";
 
 const keys = {
   OPENAI_API_KEY: APIProviderEnum.OpenAI,

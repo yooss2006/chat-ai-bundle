@@ -7,8 +7,4 @@ export const CHAT_MAP = {
     name: "Claude",
     avatar: "/claude.svg",
   },
-  gemini: {
-    name: "Gemini",
-    avatar: "/gemini.svg",
-  },
 };

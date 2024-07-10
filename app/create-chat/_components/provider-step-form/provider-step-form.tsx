@@ -1,9 +1,9 @@
-import { APIProviderEnum } from "@/types/service";
+import { APIProviderEnum } from "@/types/provider";
 import styles from "./provider-step-form.module.css";
 import Header from "../header/header";
 import SubmitPageNavigator from "../submit-page-navigator/submit-page-navigator";
 import { MotionBox } from "../motion-box/motion-box";
-import { SERVICE_OPTIONS } from "@/model/service";
+import { PROVIDER_OPTIONS } from "@/consts/provider";
 import { useFormContext } from "react-hook-form";
 import { FormData } from "../../_types/form-data";
 
@@ -14,10 +14,7 @@ type Props = {
 export default function ProviderStepForm({ apiProviders }: Props) {
   const {
     register,
-    watch,
-    setError,
-    clearErrors,
-    formState: { errors, isDirty, isValid },
+    formState: { isDirty, isValid },
   } = useFormContext<FormData>();
   const disabled = !(isDirty && isValid);
 
@@ -30,7 +27,7 @@ export default function ProviderStepForm({ apiProviders }: Props) {
         />
         <div className={styles.formGroup}>
           <div className={styles.checkboxGroup}>
-            {SERVICE_OPTIONS.map((provider) => (
+            {PROVIDER_OPTIONS.map((provider) => (
               <label key={provider} className={styles.inputLabel}>
                 <input
                   {...register("provider", { required: true })}

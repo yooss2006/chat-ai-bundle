@@ -82,7 +82,6 @@ body,
 #root {
   height: 100%;
   background: black;
-  overflow-y: hidden;
 }
 
 main {
