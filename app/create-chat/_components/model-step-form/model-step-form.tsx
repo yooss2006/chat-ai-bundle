@@ -22,14 +22,7 @@ export default function ModelStepForm() {
       provider.reduce((acc: Array<Tag>, cur) => {
         const models = PROVIDER[cur];
         if (!models) return acc;
-        return [
-          ...acc,
-          ...Object.values(models).map(({ label, value, icon }) => ({
-            label,
-            value,
-            icon,
-          })),
-        ];
+        return [...acc, ...Object.values(models)];
       }, []),
     [provider]
   );
