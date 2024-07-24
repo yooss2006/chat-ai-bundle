@@ -1,6 +1,6 @@
 import { Tag } from "@/types/tag";
 
-export interface FormData {
+export interface ChatFormData {
   name: string;
   provider: Array<string>;
   model: {

@@ -3,10 +3,10 @@ import Header from "../header/header";
 import { MotionBox } from "../motion-box/motion-box";
 import SubmitPageNavigator from "../submit-page-navigator/submit-page-navigator";
 import { useFormContext } from "react-hook-form";
-import { FormData } from "../../_types/form-data";
+import { ChatFormData } from "../../_types/form-data";
 
 export default function PromptStepForm() {
-  const { register } = useFormContext<FormData>();
+  const { register } = useFormContext<ChatFormData>();
 
   return (
     <article>

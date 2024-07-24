@@ -4,7 +4,7 @@ import { MotionBox } from "../motion-box/motion-box";
 import SubmitPageNavigator from "../submit-page-navigator/submit-page-navigator";
 import styles from "./name-step-form.module.css";
 import { useEffect } from "react";
-import { FormData } from "../../_types/form-data";
+import { ChatFormData } from "../../_types/form-data";
 
 const validateText = (value: string) => {
   if (!value) return "";
@@ -24,7 +24,7 @@ function NameInput() {
     setError,
     clearErrors,
     formState: { errors },
-  } = useFormContext<FormData>();
+  } = useFormContext<ChatFormData>();
   const nameValue = watch("name", "");
 
   useEffect(() => {

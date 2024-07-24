@@ -5,7 +5,7 @@ import SubmitPageNavigator from "../submit-page-navigator/submit-page-navigator"
 import { MotionBox } from "../motion-box/motion-box";
 import { PROVIDER_OPTIONS } from "@/consts/provider";
 import { useFormContext } from "react-hook-form";
-import { FormData } from "../../_types/form-data";
+import { ChatFormData } from "../../_types/form-data";
 
 type Props = {
   apiProviders: Array<APIProviderEnum>;
@@ -15,7 +15,7 @@ export default function ProviderStepForm({ apiProviders }: Props) {
   const {
     register,
     formState: { isDirty, isValid },
-  } = useFormContext<FormData>();
+  } = useFormContext<ChatFormData>();
   const disabled = !(isDirty && isValid);
 
   return (

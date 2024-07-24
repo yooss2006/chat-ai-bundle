@@ -9,14 +9,22 @@ import { APIProviderEnum } from "@/types/provider";
 import NameStepForm from "../name-step-form/name-step-form";
 import { AnimatePresence } from "framer-motion";
 import { FormProvider, useForm } from "react-hook-form";
-import { FormData } from "../../_types/form-data";
+import { ChatFormData } from "../../_types/form-data";
+import { postChatRoom } from "../../_api/post-chat-room";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import LoadingPage from "@/components/layout/loading-page/loading-page";
 
 type Props = {
   apiProviders: Array<APIProviderEnum>;
 };
 
 export default function CreateChatContent({ apiProviders }: Props) {
-  const method = useForm<FormData>({
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+  const method = useForm<ChatFormData>({
     defaultValues: {
       name: "",
       provider: [],
@@ -29,8 +37,16 @@ export default function CreateChatContent({ apiProviders }: Props) {
   });
   const step = useStep((state) => state.step);
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
+  const onSubmit = async (data: ChatFormData) => {
+    setIsLoading(true);
+    try {
+      const res = await postChatRoom(data);
+      router.replace(`/chat/${res.name}`);
+    } catch (error: any) {
+      toast.error(error?.response?.data?.error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -57,6 +73,7 @@ export default function CreateChatContent({ apiProviders }: Props) {
             }
           })()}
         </AnimatePresence>
+        {isLoading && <LoadingPage />}
       </form>
     </FormProvider>
   );

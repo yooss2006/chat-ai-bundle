@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { QueryClientProvider } from "@/lib/react-query/query-client-provider";
 import "./globals.css";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +24,11 @@ export default function RootLayout({
         <h1 className="blind">Chat AI Bundle</h1>
         <QueryClientProvider>
           <main>{children}</main>
+          <ToastContainer
+            position="top-center"
+            autoClose={1000}
+            hideProgressBar
+          />
         </QueryClientProvider>
       </body>
     </html>

@@ -2,14 +2,14 @@
 import React, { forwardRef, useRef } from "react";
 import styles from "./textarea.module.css";
 import { UseFormRegister } from "react-hook-form";
-import { FormData } from "@/app/create-chat/_types/form-data";
+import { ChatFormData } from "@/app/create-chat/_types/form-data";
 
 interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
 const Textarea = forwardRef<
   HTMLTextAreaElement,
-  TextareaProps & ReturnType<UseFormRegister<FormData>>
+  TextareaProps & ReturnType<UseFormRegister<ChatFormData>>
 >((props, ref) => {
   return <textarea {...props} ref={ref} className={styles.textarea} />;
 });

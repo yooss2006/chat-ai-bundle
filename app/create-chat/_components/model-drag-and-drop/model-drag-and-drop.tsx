@@ -3,7 +3,7 @@ import styles from "./model-drag-and-drop.module.css";
 import Image from "next/image";
 import { Tag } from "@/types/tag";
 import { useFormContext } from "react-hook-form";
-import { FormData } from "../../_types/form-data";
+import { ChatFormData } from "../../_types/form-data";
 
 const DROP_ZONE_POSITIONS = {
   Left: "left",
@@ -94,7 +94,7 @@ export default function ModelDragAndDrop({ models }: { models: Array<Tag> }) {
     register,
     trigger,
     formState: { errors },
-  } = useFormContext<FormData>();
+  } = useFormContext<ChatFormData>();
 
   const [tags, setTags] = useState<Array<Tag>>(models);
   const [draggingTag, setDraggingTag] = useState<Tag | null>(null);

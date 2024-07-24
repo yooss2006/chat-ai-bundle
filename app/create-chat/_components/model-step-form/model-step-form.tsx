@@ -3,7 +3,7 @@ import SubmitPageNavigator from "../submit-page-navigator/submit-page-navigator"
 import { MotionBox } from "../motion-box/motion-box";
 
 import { useFormContext } from "react-hook-form";
-import { FormData } from "../../_types/form-data";
+import { ChatFormData } from "../../_types/form-data";
 import DragAndDrop from "../model-drag-and-drop/model-drag-and-drop";
 import { useMemo } from "react";
 import { PROVIDER } from "@/consts/provider";
@@ -13,7 +13,7 @@ export default function ModelStepForm() {
   const {
     watch,
     formState: { isDirty, isValid },
-  } = useFormContext<FormData>();
+  } = useFormContext<ChatFormData>();
   const disabled = !(isDirty && isValid);
 
   const provider = useMemo(() => watch("provider") || [], [watch]);
